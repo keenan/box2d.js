@@ -2,6 +2,7 @@
 [NoDelete]
 interface b2Contact {
   b2Manifold GetManifold();
+  void GetWorldManifold(b2WorldManifold worldManifold);
   boolean IsTouching();
   void SetEnabled(boolean flag);
   boolean IsEnabled();
@@ -860,3 +861,10 @@ interface b2WheelJointDef {
 };
 
 b2WheelJointDef implements b2JointDef;
+
+interface b2WorldManifold {
+  void b2WorldManifold();
+  [Value] attribute b2Vec2 normal;
+  // TODO: webidl_binder support for array types.
+  // attribute float[] points;
+};

@@ -92,6 +92,11 @@ struct b2ManifoldPoint
 /// This structure is stored across time steps, so we keep it small.
 struct b2Manifold
 {
+	//+FSH
+	// Empty constructor for Emscripten to generate class
+	inline b2Manifold() {}
+	//-FSH
+	
 	enum Type
 	{
 		e_circles,
@@ -109,6 +114,11 @@ struct b2Manifold
 /// This is used to compute the current state of a contact manifold.
 struct b2WorldManifold
 {
+	//+FSH
+	// Empty constructor for Emscripten to generate class
+	inline b2WorldManifold() {}
+	//-FSH
+	
 	/// Evaluate the manifold with supplied transforms. This assumes
 	/// modest motion from the original state. This does not change the
 	/// point count, impulses, etc. The radii must come from the shapes
